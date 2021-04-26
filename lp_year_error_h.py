@@ -20,6 +20,20 @@ def leapYearVerifier (year):
 # Enter year to verify
 val = input("Enter year: ")
 
+
+# Verifying val is a number
+while not(type(val) == type(0)):
+    try:
+      val = int(val)
+    except:
+      print("Error: Invalid Input")
+      val = input("Enter year: ")
+
+# Converting val if negative into a positive number
+if val < 0:
+    val = val * -1
+    print("Notice: Converted into a positive number")
+
 print("Verifying if year {} is a leap year".format(val))
 
 leapYearVerifier(int(val))
